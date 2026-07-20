@@ -1,0 +1,112 @@
+{
+  "name": "bidimd",
+  "displayName": "BidiMD",
+  "description": "BidiMD — Persian/Arabic RTL Markdown Preview for VS Code & Cursor. No workbench patch. Code stays LTR.",
+  "version": "0.1.0",
+  "publisher": "BTF-Kabir",
+  "author": "BTF Kabir",
+  "license": "MIT",
+  "icon": "media/icon.png",
+  "galleryBanner": {
+    "color": "#0b1220",
+    "theme": "dark"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BTF-Kabir-2020/BidiMD"
+  },
+  "bugs": {
+    "url": "https://github.com/BTF-Kabir-2020/BidiMD/issues"
+  },
+  "homepage": "https://github.com/BTF-Kabir-2020/BidiMD#readme",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other",
+    "Formatters",
+    "Language Packs"
+  ],
+  "keywords": [
+    "rtl",
+    "persian",
+    "farsi",
+    "فارسی",
+    "arabic",
+    "hebrew",
+    "markdown",
+    "preview",
+    "cursor",
+    "bidi",
+    "bidirectional",
+    "bidimd"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "bidimd.enable",
+        "title": "BidiMD: Enable"
+      },
+      {
+        "command": "bidimd.disable",
+        "title": "BidiMD: Disable"
+      },
+      {
+        "command": "bidimd.auto",
+        "title": "BidiMD: Auto"
+      },
+      {
+        "command": "bidimd.forceRtl",
+        "title": "BidiMD: Force RTL"
+      },
+      {
+        "command": "bidimd.forceLtr",
+        "title": "BidiMD: Force LTR"
+      }
+    ],
+    "configuration": {
+      "title": "BidiMD",
+      "properties": {
+        "bidimd.enabled": {
+          "type": "boolean",
+          "default": false,
+          "description": "When true, BidiMD may inject its Markdown Preview stylesheet (respecting directionMode)."
+        },
+        "bidimd.directionMode": {
+          "type": "string",
+          "enum": [
+            "auto",
+            "rtl",
+            "ltr"
+          ],
+          "default": "auto",
+          "description": "auto: RTL stylesheet only when the active Markdown doc looks RTL-dominant. rtl/ltr: force."
+        },
+        "bidimd.configTarget": {
+          "type": "string",
+          "enum": [
+            "global",
+            "workspace"
+          ],
+          "default": "global",
+          "description": "Where to write markdown.styles and BidiMD settings (User vs Workspace)."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "npm run compile && node scripts/package-vsix.js"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.3.3"
+  }
+}

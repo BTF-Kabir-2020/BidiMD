@@ -1,0 +1,113 @@
+/* BidiMD — Markdown Preview RTL for Persian/Arabic/Hebrew; code stays LTR.
+   Injected only via official markdown.styles — no workbench patch.
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  direction: rtl;
+  text-align: right;
+  unicode-bidi: plaintext;
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+  padding: 0 1rem 2rem;
+}
+
+p,
+li,
+td,
+th,
+blockquote,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  direction: rtl;
+  text-align: right;
+  unicode-bidi: plaintext;
+  max-width: 100%;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+table {
+  direction: rtl;
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+}
+
+ul,
+ol {
+  padding-right: 1.5em;
+  padding-left: 0;
+  max-width: 100%;
+}
+
+blockquote {
+  border-left: none;
+  border-right: 5px solid;
+  padding-left: 0;
+  padding-right: 1em;
+  margin-left: 0;
+  margin-right: 0.5em;
+  max-width: 100%;
+}
+
+/* Code — always LTR, scroll on narrow panes */
+pre,
+code,
+kbd,
+samp {
+  direction: ltr !important;
+  text-align: left !important;
+  unicode-bidi: isolate;
+}
+
+pre {
+  max-width: 100%;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+p code,
+li code,
+td code,
+th code,
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+blockquote code {
+  direction: ltr;
+  unicode-bidi: isolate;
+  word-break: break-word;
+}
+
+[dir="ltr"] {
+  direction: ltr !important;
+  text-align: left !important;
+  unicode-bidi: isolate;
+}
+
+[dir="rtl"] {
+  direction: rtl !important;
+  text-align: right !important;
+}

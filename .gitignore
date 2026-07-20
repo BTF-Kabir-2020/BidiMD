@@ -1,0 +1,37 @@
+# Dependencies & build
+node_modules/
+out/
+dist/
+*.vsix
+.vscode-test/
+*.tsbuildinfo
+
+# Secrets — never commit
+.env
+.env.*
+.secrets/
+*.local
+*.local.*
+secrets.local.md
+TOKENS.local.txt
+**/*token*
+**/*TOKEN*
+*.pem
+*.p12
+*.key
+
+# Large / non-repo brand scratch (LinkedIn banners etc.)
+# Extension icon lives in media/ — that IS committed.
+brand/
+btf-kabir-publisher-logo.png
+
+# Local ops playbook (private notes — do not publish)
+RTL-EXTENSION-PLAYBOOK.md
+
+# OS / editor / local tooling
+.DS_Store
+Thumbs.db
+*.log
+.cursor/
+*.swp
+*~
